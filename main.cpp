@@ -10,13 +10,14 @@ int mainMenu();
 
 int main() {
 
-    // open codes file
+    // open codes file with data to read into BST
     ifstream codes("codes.txt");
     string temp;
-    // Create a BST
+
+    // Create an instance of a StringBinaryTree class
     StringBinaryTree userBST;
 
-    // Read the codes into new nodes to be added into BST
+    // Read the codes file into BST by using insertNode
     while(getline(codes, temp)) {
         userBST.insertNode(temp);
     }
@@ -31,26 +32,27 @@ int main() {
         switch(userPick)
         {
             case 1:
-
+                cout << "Please input string to add into BST: " << endl;
                 break;
             case 2:
 
                 break;
-        
+            case 3:
 
+                break;
+            case 4:
 
-
+                break;
+            case 5:
+                //exit menu loop
+                programRun = false;
+                cout << "Thank you for using BST Program!" << endl;
+                break;
         };
-
-
-
     }
-    // userPick = mainMenu();
     
     return 0;
 }
-
-
 
 int mainMenu() {
 
