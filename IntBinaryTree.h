@@ -33,10 +33,11 @@ public:
    // Destructor deallocates all nodes in the tree.
    ~StringBinaryTree()    { destroySubTree(root); }
 
-   // Public interface for inserting, searching, and removing nodes.
+   // Public interface for inserting, searching, removing, and modifying nodes.
    void insertNode(string);
    bool searchNode(string);
    void remove(string);
+   void modifyNode(string, string);
 
    // Public wrappers for tree traversal functions.
    void displayInOrder() const     {  displayInOrder(root); }

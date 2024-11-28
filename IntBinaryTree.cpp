@@ -60,6 +60,24 @@ bool StringBinaryTree::searchNode(string s) {
    return false;
 }
 
+// modifyNode is built off of searchNode
+// determines if a value is present in the tree
+// If so, the value at that node is changed 
+bool StringBinaryTree::modifyNode(string s) {
+   TreeNode *nodePtr = root;
+
+   while (nodePtr)    {
+      if (nodePtr->value == s)
+         return true;
+      else if (s < nodePtr->value)
+         nodePtr = nodePtr->left;
+      else
+         nodePtr = nodePtr->right;
+   }
+   return false;
+}
+
+
 // remove calls deleteNode to delete the      
 // node whose value member is the same as num.
 void StringBinaryTree::remove(string s) {
