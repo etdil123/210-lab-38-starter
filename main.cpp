@@ -27,7 +27,7 @@ int main() {
     while (programRun != false) {
 
         userPick = mainMenu();
-
+        // swtich case on the user selection 
         switch(userPick)
         {
             // Insertion
@@ -117,6 +117,8 @@ int main() {
     return 0;
 }
 
+// MainMenu function displays the program menu to the user and prompts them to select a value
+// returns that integer value to be used in the program
 int mainMenu() {
 
     int userOption;
