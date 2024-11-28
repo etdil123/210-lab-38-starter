@@ -5,7 +5,6 @@
 #include <fstream>
 using namespace std;
 
-
 int mainMenu();
 
 int main() {
@@ -24,13 +23,14 @@ int main() {
 
     bool programRun = true;
     int userPick;
-
+    // while loop to implement menu functionality
     while (programRun != false) {
 
         userPick = mainMenu();
 
         switch(userPick)
         {
+            // Insertion
             case 1: {
                 // get string to insert in BST
                 string addCode;
@@ -39,12 +39,30 @@ int main() {
 
                 // use insertNode function to add the string to the BST
                 userBST.insertNode(addCode);
-                cout << addCode << " has been added to the BST!" << endl;
+                cout << addCode << " has been added to the BST" << endl;
                 break;
             }
-            case 2:
+            // Deletion
+            case 2: {
+                // get string to delete in BST
+                string deleteCode;
+                cout << "Please enter string to be deleted: " << endl;
+                cin >> deleteCode;
 
+                // use searchNode function to search for user entered code
+                bool found = userBST.searchNode(deleteCode);
+                // display if value was not found in BST
+                if (found == false) {
+                    cout << deleteCode << " was not found in BST and cannot be deleted" << endl;
+                }
+                // use remove to delete node if the value is in the BST
+                else {
+                    userBST.remove(deleteCode);
+                    cout << deleteCode << " has been removed from the BST" << endl;
+                }
                 break;
+            }
+            // Search
             case 3: {
                 // get string to search for in BST
                 string searchCode;
@@ -55,14 +73,16 @@ int main() {
                 bool found = userBST.searchNode(searchCode);
                 // display to user if user entered code was found or not
                 if (found == true)
-                    cout << searchCode << " was found in the BST!" << endl;
+                    cout << searchCode << " was found in the BST" << endl;
                 else
-                    cout << searchCode << " was not found in the BST!" << endl;
+                    cout << searchCode << " was not found in the BST" << endl;
                 break; 
             }
+            // Modification
             case 4:
 
                 break;
+            // End Program
             case 5:
                 //exit menu loop
                 programRun = false;
