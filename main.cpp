@@ -1,6 +1,7 @@
 #include <iostream>
 #include "IntBinaryTree.h"
 #include <string>
+#include <fstream>
 using namespace std;
 
 
@@ -13,10 +14,18 @@ int main() {
 
     // userPick = mainMenu();
 
+    // open codes file
+    ifstream codes("codes.txt");
+    string temp;
     // Create a BST
     StringBinaryTree userBST;
 
-    
+    // Read the codes into new nodes to be added into BST
+    while(getline(codes, temp)) {
+        userBST.StringBinaryTree::insertNode(temp);
+    }
+
+    userBST.displayInOrder();
 
     return 0;
 }
