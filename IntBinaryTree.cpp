@@ -16,7 +16,7 @@ void StringBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
       insert(nodePtr->right, newNode);    // Search the right branch
 }
 
-// insertNode creates a new node to hold num as its value,
+// insertNode creates a new node to hold string as its value,
 // and passes it to the insert function.                  
 void StringBinaryTree::insertNode(string s) {
    TreeNode *newNode;      // Pointer to a new node.

@@ -2,6 +2,7 @@
 #ifndef INTBINARYTREE_H
 #define INTBINARYTREE_H
 #include <string>
+using namespace std;
 
 // The StringBinaryTree class manages a binary tree of integers.
 class StringBinaryTree {

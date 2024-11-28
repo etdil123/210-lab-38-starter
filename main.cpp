@@ -9,9 +9,14 @@ int mainMenu();
 int main() {
     
 
-    int userPick;
+    // int userPick;
 
-    userPick = mainMenu();
+    // userPick = mainMenu();
+
+    // Create a BST
+    StringBinaryTree userBST;
+
+    
 
     return 0;
 }
@@ -22,7 +27,7 @@ int mainMenu() {
 
     int userOption;
     // menu string to display to user
-    string menuDisplay = "** Binary Search Tree ** - Select an option below:\n[1] Add Record\n[2] Delete\n[3] Search\n[4] Modify\n[5] Quit";
+    string menuDisplay = "** Binary Search Tree ** - Select an option below:\n[1] Add Record\n[2] Delete\n[3] Search\n[4] Modify\n[5] Quit\n";
 
     cout << menuDisplay;
     cin >> userOption;
