@@ -31,15 +31,35 @@ int main() {
 
         switch(userPick)
         {
-            case 1:
-                cout << "Please input string to add into BST: " << endl;
+            case 1: {
+                // get string to insert in BST
+                string addCode;
+                cout << "Please enter string to add: " << endl;
+                cin >> addCode;
+
+                // use insertNode function to add the string to the BST
+                userBST.insertNode(addCode);
+                cout << addCode << " has been added to the BST!" << endl;
                 break;
+            }
             case 2:
 
                 break;
-            case 3:
-
-                break;
+            case 3: {
+                // get string to search for in BST
+                string searchCode;
+                cout << "Please enter string to search for: " << endl;
+                cin >> searchCode;
+                
+                // use searchNode function to search for user entered code
+                bool found = userBST.searchNode(searchCode);
+                // display to user if user entered code was found or not
+                if (found == true)
+                    cout << searchCode << " was found in the BST!" << endl;
+                else
+                    cout << searchCode << " was not found in the BST!" << endl;
+                break; 
+            }
             case 4:
 
                 break;
