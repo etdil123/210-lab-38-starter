@@ -80,8 +80,27 @@ int main() {
             }
             // Modification
             case 4: {
-                
+                // get string to modify in BSF - need to use remove and insert
+                // can't adjust the node directly - new value must abide by logical structure of BST 
+                string modifyCode;
+                cout << "Please enter string to modify" << endl;
+                cin >> modifyCode;
 
+                // use searchNode function to search for modified code
+                bool found = userBST.searchNode(modifyCode);
+                // display if value was not found in BST
+                if (found == false) {
+                    cout << modifyCode << " was not found in BST and cannot be modified" << endl;
+                }
+                // use remove to delete node if the value is in the BST & get new value to insert
+                else {
+                    string newModifiedCode;
+                    cout << "Please enter new string value to replace old value: " << endl;
+                    cin >> newModifiedCode;
+
+                    userBST.remove(deleteCode);
+                    cout << deleteCode << " has been removed from the BST" << endl;
+                }
 
                 break;
             }
