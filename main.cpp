@@ -94,14 +94,15 @@ int main() {
                 }
                 // use remove to delete node if the value is in the BST & get new value to insert
                 else {
+                    // get the new value to add into the BST
                     string newModifiedCode;
                     cout << "Please enter new string value to replace old value: " << endl;
                     cin >> newModifiedCode;
-
-                    userBST.remove(deleteCode);
-                    cout << deleteCode << " has been removed from the BST" << endl;
+                    // remove the old code and replace with new modified code value
+                    userBST.remove(modifyCode);
+                    userBST.insertNode(newModifiedCode);
+                    cout << modifyCode << " has been modified - value is now " << newModifiedCode << endl;
                 }
-
                 break;
             }
             // End Program
@@ -120,7 +121,7 @@ int mainMenu() {
 
     int userOption;
     // menu string to display to user
-    string menuDisplay = "** Binary Search Tree ** - Select an option below:\n[1] Add Record\n[2] Delete\n[3] Search\n[4] Modify\n[5] Quit\n";
+    string menuDisplay = "\n** Binary Search Tree ** - Select an option below:\n[1] Add Record\n[2] Delete\n[3] Search\n[4] Modify\n[5] Quit\n";
 
     cout << menuDisplay;
     cin >> userOption;
